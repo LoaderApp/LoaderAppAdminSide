@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "viewAvailableQuotes";
+}
+<body>
+<h2>Available Orders</h2>
+<table style="width:100%">
+    <tr>
+        <th>Pick Up</th>
+        <th>Drop Off</th>
+        <th>Comodity</th>
+        <th>Weight</th>
+        <th>PickUpDate</th>
+        <th>Length</th>
+        <th>Width</th>
+        <th>Height</th>
+        <th>ReceiverName</th>
+        <th>ReceiverCompanyName</th>
+        <th>AdditionalDetails</th>
+        <th>Status</th>
+        <th>Budget</th>
+        <th>See Quotes</th>
+    </tr>
+    
+    @{
+        foreach (var order in @ViewBag.QuotesData)
+        {
+            <tr>
+                <td>@order.OrderPickup</td>
+                <td>@order.OrderDropOff</td>
+                <td>@order.OrderDropOff</td>
+                <td>@order.OrderDropOff</td>
+                <td>@order.OrderDropOff</td>
+                <td>@order.OrderDropOff</td>
+                <td>@order.OrderDropOff</td>
+                <td>@order.OrderDropOff</td>
+                <td>@order.OrderDropOff</td>
+                <td>@order.OrderDropOff</td>
+                <td>@order.OrderDropOff</td>
+                <td>@order.OrderDropOff</td>
+                <td>@order.OrderDropOff</td>
+                <td><a href=@Url.Action("viewQuoteDetails","Admin",new { id=order.Id})>proceed to view Quotes</a></td>
+            </tr>
+        }
+    }
+</table>
+
+</body>
+
+
